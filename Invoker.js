@@ -2,9 +2,8 @@ var Invoker = (function () {
     "use strict";
     
     this.isEmail = function (str) {
-        var tmp = true;
         var pattern = /\w[a-zA-z0-9._]\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}/;
-        tmp = pattern.test(str);
+        var tmp = pattern.test(str);
         var items = ["*", "[", "]", "(", ")", "^", "%", "#", "!", "-", "=", "+", "&", "$", "`", "~", " ", "{", "}", ",", "<", ">", "?", "/", "|"];
         for (var i = 0; i < items.length; i++) {
             if (str.indexOf(items[i]) > -1) {
@@ -42,7 +41,7 @@ var Invoker = (function () {
 
     this.replaceToSpecialChar = function (str) {
         var str1 = str.replace(/&#39;/, "'");
-        str1 = str1.replace(/&#34;/, "\"")
+        str1 = str1.replace(/&#34;/, "\"");
         return str1;
     };
 
