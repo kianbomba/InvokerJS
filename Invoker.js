@@ -2,21 +2,10 @@ var Invoker = (function () {
     "use strict";
     
     this.isEmail = function (str) {
-        var pattern = /\w[a-zA-z0-9._]\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}/;
-        var tmp = pattern.test(str);
-        var items = ["*", "[", "]", "(", ")", "^", "%", "#", "!", "-", "=", "+", "&", "$", "`", "~", " ", "{", "}", ",", "<", ">", "?", "/", "|"];
-        for (var i = 0; i < items.length; i++) {
-            if (str.indexOf(items[i]) > -1) {
-                tmp = false;
-            }
-        }
-        var count = (str.match(/@/g) || []).length;
-        if (count > 1) {
-            tmp = false;
-        }
-        return tmp;
+        var pattern = /^\w[a-zA-z0-9._]\w+@[a-zA-Z_\-]+?\.[a-zA-Z\.]{2,}/;
+        return pattern.test(str);
     };
-
+    
     this.removeSpaces = function (string_text) {
         return string_text.replace(/^\s+|\s+$/g, '');
     };
