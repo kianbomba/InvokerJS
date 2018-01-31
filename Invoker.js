@@ -2,7 +2,7 @@ var Invoker = (function () {
     "use strict";
     
     this.isEmail = function (str) {
-        var pattern = /^\w[a-zA-z0-9._]\w+@[a-zA-Z_\-]+?\.[a-zA-Z\.]{2,}/;
+        var pattern = /^[a-zA-z0-9._]+@[a-zA-Z_\-]+\.[a-zA-Z\.]{2,}/;
         return pattern.test(str);
     };
     
